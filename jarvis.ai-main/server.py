@@ -546,7 +546,7 @@ class DashboardServer:
   sessionStorage.setItem('jarvis_token','{tok}');
   sessionStorage.setItem('jarvis_key','{key}');
   localStorage.setItem('jarvis_device_token','{dev_tok}');
-  setTimeout(function(){{location.replace('/')}},400);
+  setTimeout(function(){{location.replace('/mobile')}},400);
 </script>
 <p>Connecting to JARVIS…</p>
 </body></html>""")
