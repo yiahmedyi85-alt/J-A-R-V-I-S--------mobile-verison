@@ -468,6 +468,11 @@ class DashboardServer:
         async def login_page():
             return HTMLResponse(self._login_html)
 
+        @app.get("/mobile", response_class=HTMLResponse)
+        async def mobile_page():
+            """Serve the focused mobile Jarvis client; keep the desktop dashboard unchanged."""
+            return HTMLResponse(_read("mobile.html"), headers={"Cache-Control": "no-store"})
+
         @app.get("/", response_class=HTMLResponse)
         async def index():
             # Auth is handled client-side via sessionStorage bearer token.
